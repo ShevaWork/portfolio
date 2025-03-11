@@ -1,0 +1,52 @@
+{
+  "Navbar": {
+    "about": "About me",
+    "projects": "My projects",
+    "reviews": "Reviews",
+    "contacts": "Contacts"
+  },
+  "AboutSection": {
+    "title": "Hello, I'm Oleksandr",
+    "description": "I am a front-end developer who creates modern and user-friendly websites. My priority is to design intuitive interfaces that provide a great user experience.",
+    "contacts": "Contacts"
+  },
+  "Skills": {
+    "title": "Creativity",
+    "title_text": "My experience and skills",
+    "description": " I'm a Front-end developer with experience in creating websites, Chrome extensions, and web process automation, and I have skills in layout, APIs, and writing scripts to optimise tasks.",
+    "contacts": "Contacts",
+    "more": "More",
+    "more_text": "🔹 HTML, CSS, JavaScript, React, Next.js – creation of adaptive and interactive interfaces /n🔹 WordPress – development and customisation of websites, customisation of themes and plugins./n🔹 Chrome Extensions – development of extensions to automate actions in the browser./n🔹 Tampermonkey – writing scripts to improve the user experience./n🔹 Process automation - writing scripts to simplify work in a corporate environment./n🔹 Data parsing - creating scripts to retrieve and process information from web pages./n🔹 Working with console commands - configuring the Windows environment using batch scripts."
+  },
+  "MyProjects": {
+    "pre_titpe": "Portfolio",
+    "title": "My projects",
+    "description": "Here are some of my recent works"
+  },
+  "Reviews": {
+    "title": "Feedback",
+    "description": "Feedback from clients who have chosen my services",
+    "none_reviews": "No comments yet"
+  },
+  "ContactsUs": {
+    "copy": "Copied!",
+    "title": "Contacts",
+    "description": "Contacts to contact me",
+    "title_email": "Email",
+    "description_email": "You can use email to contact me.",
+    "title_phone": "Phone",
+    "description_phone": "If you need to discuss the details, please call or write to us on messengers.",
+    "title_linkedin": "Linkedin",
+    "description_linkedin": "Connect on LinkedIn for professional networking and collaboration."
+  },
+  "Footer": {
+    "title_email": "Email",
+    "description_email": "Enter your email for feedback",
+    "placeholder": "Enter a valid email address",
+    "send_successfully": "The message has been sent!",
+    "send_error_1": "Sending error",
+    "send_error_2": "There was an error. Please try again later.",
+    "sending_btn": "Sending...",
+    "send_btn": "Send"
+  }
+}
