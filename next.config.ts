@@ -4,7 +4,6 @@ import createNextIntlPlugin from "next-intl/plugin";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["api.microlink.io", "image.thum.io", "api.apiflash.com"],
     remotePatterns: [
       {
         protocol: "https",
