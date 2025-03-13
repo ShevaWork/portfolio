@@ -43,8 +43,58 @@ const fredoka = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Test Portfolio App",
-  description: "Test Portfolio App",
+  metadataBase: new URL('https://portfolio-ivory-phi-92.vercel.app'),
+  title: {
+    default: 'Портфоліо',
+    template: 'Олександр'
+  },
+  description: 'Професійне портфоліо з проєктами на React, Next.js та інших сучасних технологіях',
+  keywords: ['веб-розробка', 'frontend', 'React', 'Next.js', 'портфоліо', 'українська веб-розробка'],
+  authors: [
+    { name: 'Олександр', url: 'https://portfolio-ivory-phi-92.vercel.app' }
+  ],
+  creator: 'Олександр',
+  openGraph: {
+    type: 'website',
+    locale: 'uk_UA',
+    url: 'https://portfolio-ivory-phi-92.vercel.app',
+    title: 'Портфоліо',
+    description: 'Професійне портфоліо з проєктами на React, Next.js та інших сучасних технологіях',
+    siteName: 'Портфоліо',
+    images: [
+      {
+        url: '/og-image.jpg', // Додайте зображення у /public директорію
+        width: 1899,
+        height: 927,
+        alt: 'Портфоліо превью',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Портфоліо',
+    description: 'Професійне портфоліо з проєктами на React, Next.js та інших сучасних технологіях',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: '/favicon-logo.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
+  alternates: {
+    canonical: 'https://portfolio-ivory-phi-92.vercel.app',
+    languages: {
+      'uk-UA': 'https://portfolio-ivory-phi-92.vercel.app/ua',
+      'en-US': 'https://portfolio-ivory-phi-92.vercel.app/en',
+    },
+  },
 };
 
 export default async function RootLayout({
