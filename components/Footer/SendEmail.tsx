@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FormEvent, useState } from "react";
-import { toast } from "sonner";
+import { toast } from "react-hot-toast";
 import { useTranslations } from "next-intl";
 
 const SendEmail = () => {
@@ -17,7 +17,6 @@ const SendEmail = () => {
       toast.error(t("placeholder"));
       return;
     }
-
     setIsLoading(true);
 
     try {
