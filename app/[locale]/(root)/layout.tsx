@@ -42,60 +42,84 @@ const fredoka = localFont({
   variable: "--font-fedoka",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-ivory-phi-92.vercel.app'),
-  title: {
-    default: 'Портфоліо',
-    template: 'Олександр'
-  },
-  description: 'Професійне портфоліо з проєктами на React, Next.js та інших сучасних технологіях',
-  keywords: ['веб-розробка', 'frontend', 'React', 'Next.js', 'портфоліо', 'українська веб-розробка'],
-  authors: [
-    { name: 'Олександр', url: 'https://portfolio-ivory-phi-92.vercel.app' }
-  ],
-  creator: 'Олександр',
-  openGraph: {
-    type: 'website',
-    locale: 'uk_UA',
-    url: 'https://portfolio-ivory-phi-92.vercel.app',
-    title: 'Портфоліо',
-    description: 'Професійне портфоліо з проєктами на React, Next.js та інших сучасних технологіях',
-    siteName: 'Портфоліо',
-    images: [
-      {
-        url: '/og-image.jpg', // Додайте зображення у /public директорію
-        width: 1899,
-        height: 927,
-        alt: 'Портфоліо превью',
-      }
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Портфоліо',
-    description: 'Професійне портфоліо з проєктами на React, Next.js та інших сучасних технологіях',
-    images: ['/og-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: '/favicon-logo.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  alternates: {
-    canonical: 'https://portfolio-ivory-phi-92.vercel.app',
-    languages: {
-      'uk-UA': 'https://portfolio-ivory-phi-92.vercel.app/ua',
-      'en-US': 'https://portfolio-ivory-phi-92.vercel.app/en',
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  // Завантажуємо повідомлення для поточної локалі
+  const messages = await getMessages({ locale: params.locale });
+  interface MetaData {
+    nameProj: string;
+    myName: string;
+    description: string;
+    keywords: string[];
+    altIMG: string;
+  }
+
+  const meta = messages.meta as unknown as MetaData;
+
+  // Базовий URL сайту
+  const baseUrl = "https://portfolio-ivory-phi-92.vercel.app/";
+  return {
+    metadataBase: new URL(baseUrl),
+    title: {
+      default: meta.nameProj,
+      template: meta.myName,
     },
-  },
-};
+    description: meta.description,
+    keywords: meta.keywords,
+    authors: [
+      {
+        name: meta.myName,
+        url: baseUrl,
+      },
+    ],
+    creator: meta.myName,
+    openGraph: {
+      type: "website",
+      locale: params.locale === "ua" ? "uk_UA" : "en_US",
+      url: `${baseUrl}/${params.locale}`,
+      title: meta.myName,
+      description: meta.description,
+      siteName: meta.nameProj,
+      images: [
+        {
+          url: "/og-image.jpg", // Зображення у /public директорії
+          width: 1899,
+          height: 927,
+          alt: meta.altIMG,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.myName,
+      description: meta.description,
+      images: ["/og-image.jpg"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+    viewport: {
+      width: "device-width",
+      initialScale: 1,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}`,
+      languages: {
+        "uk-UA": `${baseUrl}/ua`,
+        "en-US": `${baseUrl}/en`,
+        // Додайте інші мови за потреби
+      },
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
