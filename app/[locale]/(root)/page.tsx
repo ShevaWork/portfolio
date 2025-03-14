@@ -1,30 +1,30 @@
-import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
 import AboutSection from "@/components/AboutSection/AboutSection";
 import Skills from "@/components/Skills/Skills";
 import MyProjects from "@/components/MyProjects/MyProjects";
 import Reviews from "@/components/Reviews/Reviews";
 import ContactsUs from "@/components/ContactsUs/ContactsUs";
+import { getMessages } from "next-intl/server";
+import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  // Завантажуємо повідомлення для поточної локалі
-  const messages = await getMessages({ locale: params.locale }) as { home?: { page_title?: string; page_description?: string; myName?: string }, meta: { page_title: string; page_description: string; myName: string } };
+  const messages = await getMessages({ locale: params.locale });
+  interface MetadataMessages {
+    page_title: string;
+    page_description: string;
+  }
 
-  // Припустимо, що у вас є спеціальні значення для головної сторінки
-  // Якщо немає окремих ключів для головної, можна використати meta.title напряму
+  const metadata = messages.Metadata as unknown as MetadataMessages;
 
   return {
-    title: messages.home?.page_title || messages.meta.page_title,
-    description:
-      messages.home?.page_description || messages.meta.page_description,
+    title: metadata.page_title,
+    description: metadata.page_description,
     openGraph: {
-      title: messages.home?.myName || messages.meta.myName,
-      description:
-        messages.home?.page_description || messages.meta.page_description,
+      title: metadata.page_title,
+      description: metadata.page_description,
     },
   };
 }

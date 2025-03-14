@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
 
+
 const fredoka = localFont({
   src: [
     {
@@ -41,10 +42,52 @@ const fredoka = localFont({
   variable: "--font-fedoka",
 });
 
-export const metadata: Metadata = {
-  title: "Test Portfolio App",
-  description: "Test Portfolio App",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const messages = await getMessages({ locale: params.locale });
+  interface MetadataMessages {
+    nameProj: string;
+    myName: string;
+    description: string;
+    keywords: string[];
+    altIMG: string;
+  }
+
+  const metadata = messages.Metadata as unknown as MetadataMessages;
+
+  return {
+    title: {
+      template: `${metadata.nameProj} | ${metadata.myName} - %s`,
+      default: `${metadata.nameProj} | ${metadata.myName}`,
+    },
+    description: metadata.description,
+    keywords: metadata.keywords,
+    openGraph: {
+      title: `${metadata.nameProj} | ${metadata.myName}`,
+      description: metadata.description,
+      locale: params.locale,
+      type: 'website',
+      siteName: `${metadata.nameProj} | ${metadata.myName}`,
+      images: [
+        {
+          url: '/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: metadata.altIMG,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${metadata.nameProj} | ${metadata.myName}`,
+      description: metadata.description,
+      images: ['/og-image.jpg'],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
