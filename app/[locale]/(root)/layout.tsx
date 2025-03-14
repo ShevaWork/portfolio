@@ -8,7 +8,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
-import { Analytics } from "@vercel/analytics/react";
 import "@/app/globals.css";
 
 const fredoka = localFont({
@@ -42,84 +41,10 @@ const fredoka = localFont({
   variable: "--font-fedoka",
 });
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  // Завантажуємо повідомлення для поточної локалі
-  const messages = await getMessages({ locale: params.locale });
-  interface MetaData {
-    nameProj: string;
-    myName: string;
-    description: string;
-    keywords: string[];
-    altIMG: string;
-  }
-
-  const meta = messages.meta as unknown as MetaData;
-
-  // Базовий URL сайту
-  const baseUrl = "https://portfolio-ivory-phi-92.vercel.app/";
-  return {
-    metadataBase: new URL(baseUrl),
-    title: {
-      default: meta.nameProj,
-      template: meta.myName,
-    },
-    description: meta.description,
-    keywords: meta.keywords,
-    authors: [
-      {
-        name: meta.myName,
-        url: baseUrl,
-      },
-    ],
-    creator: meta.myName,
-    openGraph: {
-      type: "website",
-      locale: params.locale === "ua" ? "uk_UA" : "en_US",
-      url: `${baseUrl}/${params.locale}`,
-      title: meta.myName,
-      description: meta.description,
-      siteName: meta.nameProj,
-      images: [
-        {
-          url: "/og-image.jpg", // Зображення у /public директорії
-          width: 1899,
-          height: 927,
-          alt: meta.altIMG,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: meta.myName,
-      description: meta.description,
-      images: ["/og-image.jpg"],
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    icons: {
-      icon: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
-    },
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-    },
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}`,
-      languages: {
-        "uk-UA": `${baseUrl}/ua`,
-        "en-US": `${baseUrl}/en`,
-        // Додайте інші мови за потреби
-      },
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Test Portfolio App",
+  description: "Test Portfolio App",
+};
 
 export default async function RootLayout({
   children,
@@ -152,7 +77,6 @@ export default async function RootLayout({
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
-      <Analytics />
     </html>
   );
 }
