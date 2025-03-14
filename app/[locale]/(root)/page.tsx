@@ -12,12 +12,7 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const messages = await getMessages({ locale: params.locale });
-  interface MetadataMessages {
-    page_title: string;
-    page_description: string;
-  }
-
-  const metadata = messages.Metadata as unknown as MetadataMessages;
+  const metadata = messages.Metadata as any;
 
   return {
     title: metadata.page_title,
@@ -28,6 +23,7 @@ export async function generateMetadata({
     },
   };
 }
+
 
 export default function Home() {
   return (

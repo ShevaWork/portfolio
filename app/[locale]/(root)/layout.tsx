@@ -48,15 +48,7 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const messages = await getMessages({ locale: params.locale });
-  interface MetadataMessages {
-    nameProj: string;
-    myName: string;
-    description: string;
-    keywords: string[];
-    altIMG: string;
-  }
-
-  const metadata = messages.Metadata as unknown as MetadataMessages;
+  const metadata = messages.Metadata as any;
 
   return {
     title: {
