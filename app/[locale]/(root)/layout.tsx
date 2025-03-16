@@ -10,6 +10,20 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
 
+interface MessageMetadata {
+  nameProj: string;
+  myName: string;
+  description: string;
+  keywords: string[];
+  altIMG: string;
+  page_title: string;
+  page_description: string;
+}
+
+interface Messages {
+  Metadata?: MessageMetadata;
+  [key: string]: any;
+}
 
 const fredoka = localFont({
   src: [
@@ -47,8 +61,16 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const messages = await getMessages({ locale: params.locale });
-  const metadata = messages.Metadata as any;
+  const messages = (await getMessages({ locale: params.locale })) as Messages;
+  
+  // Перевірка та використання метаданих з безпечним доступом
+  const metadata = messages.Metadata || {
+    nameProj: "Portfolio",
+    myName: "Oleksandr",
+    description: "Professional portfolio",
+    keywords: ["portfolio", "web developer"],
+    altIMG: "Portfolio preview"
+  };
 
   return {
     title: {
@@ -68,7 +90,7 @@ export async function generateMetadata({
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: metadata.altIMG,
+          alt: metadata.altIMG || "Portfolio preview",
         },
       ],
     },
