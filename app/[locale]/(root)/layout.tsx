@@ -8,7 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
-// import { getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 // export async function generateMetadata({
 //   params,
