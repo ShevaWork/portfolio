@@ -9,7 +9,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
 import { getTranslations } from "next-intl/server";
-console.log(getTranslations);
 import { Metadata } from "next";
 
 export async function generateMetadata({
