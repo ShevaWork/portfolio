@@ -14,7 +14,10 @@ const SendEmail = () => {
 
     // Проста валідація email
     if (!email || !email.includes("@")) {
-      toast.error(t("placeholder"));
+      toast.error(t("placeholder"), {
+        position: "top-right",
+        duration: 3000,
+      });
       return;
     }
     setIsLoading(true);
