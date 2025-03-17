@@ -8,68 +8,68 @@ import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
-import { getTranslations } from "next-intl/server";
+// import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const locale = params.locale;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-  return {
-    title: {
-      default: `${t("nameProj")} | ${t("myName")}`,
-      template: `${t("myName")} | ${t("nameProj")}`,
-    },
-    description: t("description"),
-    authors: [
-      { name: t("myName"), url: "https://portfolio-ivory-phi-92.vercel.app/" },
-    ],
-    creator: t("myName"),
-    openGraph: {
-      type: "website",
-      locale: "uk_UA",
-      url: "https://portfolio-ivory-phi-92.vercel.app/",
-      title: `${t("myName")} | ${t("nameProj")}`,
-      description: t("description"),
-      siteName: `${t("nameProj")} | ${t("myName")}`,
-      images: [
-        {
-          url: "/og-image.jpg", // Додайте зображення у /public директорію
-          width: 1899,
-          height: 927,
-          alt: t("altIMG"),
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${t("myName")} | ${t("nameProj")}`,
-      description: t("description"),
-      images: ["/og-image.jpg"],
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    icons: {
-      icon: "/favicon.ico",
-      apple: "/logo_cur.svg",
-    },
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-    },
-    alternates: {
-      canonical: "https://portfolio-ivory-phi-92.vercel.app",
-      languages: {
-        "uk-UA": "https://portfolio-ivory-phi-92.vercel.app/ua",
-        "en-US": "https://portfolio-ivory-phi-92.vercel.app/en",
-      },
-    },
-  };
-}
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { locale: string };
+// }) {
+//   const locale = params.locale;
+//   const t = await getTranslations({ locale, namespace: "Metadata" });
+//   return {
+//     title: {
+//       default: `${t("nameProj")} | ${t("myName")}`,
+//       template: `${t("myName")} | ${t("nameProj")}`,
+//     },
+//     description: t("description"),
+//     authors: [
+//       { name: t("myName"), url: "https://portfolio-ivory-phi-92.vercel.app/" },
+//     ],
+//     creator: t("myName"),
+//     openGraph: {
+//       type: "website",
+//       locale: "uk_UA",
+//       url: "https://portfolio-ivory-phi-92.vercel.app/",
+//       title: `${t("myName")} | ${t("nameProj")}`,
+//       description: t("description"),
+//       siteName: `${t("nameProj")} | ${t("myName")}`,
+//       images: [
+//         {
+//           url: "/og-image.jpg", // Додайте зображення у /public директорію
+//           width: 1899,
+//           height: 927,
+//           alt: t("altIMG"),
+//         },
+//       ],
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: `${t("myName")} | ${t("nameProj")}`,
+//       description: t("description"),
+//       images: ["/og-image.jpg"],
+//     },
+//     robots: {
+//       index: true,
+//       follow: true,
+//     },
+//     icons: {
+//       icon: "/favicon.ico",
+//       apple: "/logo_cur.svg",
+//     },
+//     viewport: {
+//       width: "device-width",
+//       initialScale: 1,
+//     },
+//     alternates: {
+//       canonical: "https://portfolio-ivory-phi-92.vercel.app",
+//       languages: {
+//         "uk-UA": "https://portfolio-ivory-phi-92.vercel.app/ua",
+//         "en-US": "https://portfolio-ivory-phi-92.vercel.app/en",
+//       },
+//     },
+//   };
+// }
 
 const fredoka = localFont({
   src: [
