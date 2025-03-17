@@ -79,18 +79,21 @@ const Footer = () => {
             <Link
               href="https://www.instagram.com/0_s.h.e.v.a_0?igsh=MTNuNDNybHlqd2RjaQ=="
               target="_blank"
+              className="hover:font-semibold"
             >
               <FaInstagram className="icon-footer mx-4" />
             </Link>
             <Link
               href="https://www.facebook.com/share/18VAcWCAs8/"
               target="_blank"
+              className="hover:font-semibold"
             >
               <FaFacebook className="icon-footer mx-4" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/olexandr-shevchuk-77216317a"
               target="_blank"
+              className="hover:font-semibold"
             >
               <FaLinkedin className="icon-footer mx-4" />
             </Link>
