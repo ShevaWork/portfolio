@@ -76,9 +76,24 @@ const Footer = () => {
             </Link>
           </div>
           <div className="md:w-1/3 flex flex-row justify-center md:justify-end">
-            <FaInstagram className="icon-footer mx-4" />
-            <FaFacebook className="icon-footer mx-4" />
-            <FaLinkedin className="icon-footer mx-4" />
+            <Link
+              href="https://www.instagram.com/0_s.h.e.v.a_0?igsh=MTNuNDNybHlqd2RjaQ=="
+              target="_blank"
+            >
+              <FaInstagram className="icon-footer mx-4" />
+            </Link>
+            <Link
+              href="https://www.facebook.com/share/18VAcWCAs8/"
+              target="_blank"
+            >
+              <FaFacebook className="icon-footer mx-4" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/olexandr-shevchuk-77216317a"
+              target="_blank"
+            >
+              <FaLinkedin className="icon-footer mx-4" />
+            </Link>
           </div>
         </div>
         <div className="flex flex-row items-center h-auto p-2 justify-between">
