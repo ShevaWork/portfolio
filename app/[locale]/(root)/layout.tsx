@@ -28,13 +28,13 @@ export async function generateMetadata({
     },
     description: t("description"),
     authors: [
-      { name: t("myName"), url: "https://portfolio-ivory-phi-92.vercel.app/" },
+      { name: t("myName"), url: "https://portfolio-oleksandrs-projects-83966112.vercel.app/" },
     ],
     creator: t("myName"),
     openGraph: {
       type: "website",
       locale: "uk_UA",
-      url: "https://portfolio-ivory-phi-92.vercel.app/",
+      url: "https://portfolio-oleksandrs-projects-83966112.vercel.app/",
       title: `${t("myName")} | ${t("nameProj")}`,
       description: t("description"),
       siteName: `${t("nameProj")} | ${t("myName")}`,
@@ -66,10 +66,10 @@ export async function generateMetadata({
       initialScale: 1,
     },
     alternates: {
-      canonical: "https://portfolio-ivory-phi-92.vercel.app",
+      canonical: "https://portfolio-oleksandrs-projects-83966112.vercel.app/",
       languages: {
-        "uk-UA": "https://portfolio-ivory-phi-92.vercel.app/ua",
-        "en-US": "https://portfolio-ivory-phi-92.vercel.app/en",
+        "uk-UA": "https://portfolio-oleksandrs-projects-83966112.vercel.app/ua",
+        "en-US": "https://portfolio-oleksandrs-projects-83966112.vercel.app/en",
       },
     },
   };
