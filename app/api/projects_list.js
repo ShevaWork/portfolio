@@ -1,6 +1,18 @@
 export const projectsData = [
   {
     id: 1,
+    title: "Портфоліо",
+    title_en: "Portfolio",
+    description:
+      "Сучасний веб-ресурс, розроблений з використанням HTML, CSS, JavaScript та Next.js для забезпечення високої продуктивності та гнучкості. Сайт має адаптивний дизайн, інтуїтивну навігацію та оптимізовану структуру, що робить його зручним для перегляду на будь-яких пристроях. Основна увага приділена швидкодії, чистоті коду та ефективному використанню сучасних веб-технологій.",
+    description_en:
+      "A modern web resource developed using HTML, CSS, JavaScript and Next.js to ensure high performance and flexibility. The site has a responsive design, intuitive navigation and optimised structure, making it easy to view on any device. The main focus is on speed, clean code and efficient use of modern web technologies.",
+    liveUrl: "https://portfolio-ivory-phi-92.vercel.app/en",
+    repoUrl: "https://github.com/ShevaWork/portfolio.git",
+    tags: ["JavaScript", "TailwindCSS", "NextJS"],
+  },
+  {
+    id: 2,
     title: "Автоклікер",
     title_en: "Autoclicker",
     description:
@@ -10,14 +22,4 @@ export const projectsData = [
     repoUrl: "https://github.com/ShevaWork/clicker_with-req.git",
     tags: ["JavaScript ", "ChromeExtension ", "WebScraping "],
   },
-  {
-    id: 2,
-    title: "Портфоліо",
-    title_en: "Portfolio",
-    description: "Сучасний веб-ресурс, розроблений з використанням HTML, CSS, JavaScript та Next.js для забезпечення високої продуктивності та гнучкості. Сайт має адаптивний дизайн, інтуїтивну навігацію та оптимізовану структуру, що робить його зручним для перегляду на будь-яких пристроях. Основна увага приділена швидкодії, чистоті коду та ефективному використанню сучасних веб-технологій.",
-    description_en:"A modern web resource developed using HTML, CSS, JavaScript and Next.js to ensure high performance and flexibility. The site has a responsive design, intuitive navigation and optimised structure, making it easy to view on any device. The main focus is on speed, clean code and efficient use of modern web technologies.",
-    liveUrl: "https://portfolio-ivory-phi-92.vercel.app/en",
-    repoUrl: "https://github.com/ShevaWork/portfolio.git",
-    tags: ["JavaScript", "TailwindCSS", "NextJS"],
-  }
 ];
