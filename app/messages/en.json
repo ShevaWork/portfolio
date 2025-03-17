@@ -55,7 +55,6 @@
     "description": "Professional portfolio with projects on React, Next.js and other modern technologies",
     "keywords": "web development, frontend, React, Next.js, portfolio, web developer",
     "altIMG": "Portfolio preview",
-    "page_title": "Home page",
     "page_description": "Welcome to my portfolio website. Check out my projects, skills and testimonials"
   }
 }
