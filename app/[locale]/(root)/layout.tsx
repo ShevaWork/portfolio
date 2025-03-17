@@ -54,18 +54,18 @@ export async function generateMetadata({
       follow: true,
     },
     icons: {
-      icon: '/favicon.ico',
-      apple: '/logo_cur.svg',
+      icon: "/favicon.ico",
+      apple: "/logo_cur.svg",
     },
     viewport: {
-      width: 'device-width',
+      width: "device-width",
       initialScale: 1,
     },
     alternates: {
-      canonical: 'https://portfolio-ivory-phi-92.vercel.app',
+      canonical: "https://portfolio-ivory-phi-92.vercel.app",
       languages: {
-        'uk-UA': 'https://portfolio-ivory-phi-92.vercel.app/ua',
-        'en-US': 'https://portfolio-ivory-phi-92.vercel.app/en',
+        "uk-UA": "https://portfolio-ivory-phi-92.vercel.app/ua",
+        "en-US": "https://portfolio-ivory-phi-92.vercel.app/en",
       },
     },
   };
@@ -107,9 +107,10 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = params.locale;
+  const resolvedParams = await params;
+  const locale = resolvedParams.locale;
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
@@ -136,4 +137,3 @@ export default async function RootLayout({
     </html>
   );
 }
-
