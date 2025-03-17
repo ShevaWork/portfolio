@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
           <div className="md:w-1/3 flex flex-row justify-center md:justify-end">
             <Link
-              href="https://www.instagram.com/0_s.h.e.v.a_0?igsh=MTNuNDNybHlqd2RjaQ=="
+              href="https://www.instagram.com/0___s.h.e.v.a___0?igsh=MTNuNDNybHlqd2RjaQ=="
               target="_blank"
               className="hover:font-semibold"
             >
