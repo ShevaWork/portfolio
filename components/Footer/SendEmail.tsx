@@ -34,13 +34,22 @@ const SendEmail = () => {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success(t("send_successfully"));
+        toast.success(t("send_successfully"), {
+          position: "top-right",
+          duration: 3000,
+        });
         setEmail(""); // Очищення поля після успішної відправки
       } else {
-        toast.error(result.message || t("send_error_1"));
+        toast.error(result.message || t("send_error_1"), {
+        position: "top-right",
+        duration: 3000,
+      });
       }
     } catch {
-      toast.error(t("send_error_2"));
+      toast.error(t("send_error_2"), {
+        position: "top-right",
+        duration: 3000,
+      });
     } finally {
       setIsLoading(false);
     }
