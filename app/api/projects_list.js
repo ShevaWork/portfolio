@@ -13,17 +13,6 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Автоклікер",
-    title_en: "Autoclicker",
-    description:
-      "Мій скрипт-автоклікер для Google Chrome автоматизує оновлення блоку сторінки та обробку завдань, що з’являються в таблиці. Він використовує два незалежні інтервали: один відповідає за оновлення контенту, інший — за перевірку та взаємодію з елементами. Скрипт оптимізований для швидкої роботи, містить функцію генерації випадкового кольору для візуального відображення активності та інтегрується з клавішею NumpadMultiply для зручного керування.",
-    description_en:
-      "My autoclicker script for Google Chrome automates the refreshing of a page block and the handling of tasks that appear in a table. It uses two independent intervals: one is responsible for updating the content, the other for checking and interacting with elements. The script is optimised for fast performance, includes a random colour generation function to visually display activity, and integrates with the NumpadMultiply key for easy control.",
-    repoUrl: "https://github.com/ShevaWork/clicker_with-req.git",
-    tags: ["JavaScript ", "ChromeExtension ", "WebScraping "],
-  },
-  {
-    id: 3,
     title: "Positivus",
     title_en: "Positivus",
     description:
@@ -33,5 +22,16 @@ export const projectsData = [
     liveUrl: "https://positivus-kappa-tawny.vercel.app/",
     repoUrl: "https://github.com/ShevaWork/positivus",
     tags: ["HTML ", "Tailwind CSS ", "Responsive Design"],
+  },
+  {
+    id: 3,
+    title: "Автоклікер",
+    title_en: "Autoclicker",
+    description:
+      "Мій скрипт-автоклікер для Google Chrome автоматизує оновлення блоку сторінки та обробку завдань, що з’являються в таблиці. Він використовує два незалежні інтервали: один відповідає за оновлення контенту, інший — за перевірку та взаємодію з елементами. Скрипт оптимізований для швидкої роботи, містить функцію генерації випадкового кольору для візуального відображення активності та інтегрується з клавішею NumpadMultiply для зручного керування.",
+    description_en:
+      "My autoclicker script for Google Chrome automates the refreshing of a page block and the handling of tasks that appear in a table. It uses two independent intervals: one is responsible for updating the content, the other for checking and interacting with elements. The script is optimised for fast performance, includes a random colour generation function to visually display activity, and integrates with the NumpadMultiply key for easy control.",
+    repoUrl: "https://github.com/ShevaWork/clicker_with-req.git",
+    tags: ["JavaScript ", "ChromeExtension ", "WebScraping "],
   },
 ];
