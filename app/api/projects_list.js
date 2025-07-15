@@ -30,7 +30,6 @@ export const projectsData = [
       "Positivus — це багатосторінковий вебсайт, створений для презентації сучасного агентства або компанії, що надає маркетингові чи консалтингові послуги. Проєкт реалізований з використанням Vite та Tailwind CSS, з фокусом на адаптивний дизайн, зручну навігацію та сучасну візуальну естетику. Він включає головну сторінку, секції з інформацією про компанію, послуги, відгуки клієнтів, ціни та контактну форму.",
     description_en:
       "Positivus is a multi-page website designed to present a modern agency or company that provides marketing or consulting services. The project was implemented using Vite and Tailwind CSS, with a focus on responsive design, easy navigation, and modern visual aesthetics. It includes a home page, sections with information about the company, services, customer reviews, prices, and a contact form.",
-    liveUrl: "https://positivus-kappa-tawny.vercel.app/",
     repoUrl: "https://github.com/ShevaWork/positivus",
     tags: ["HTML ", "Tailwind CSS ", "Responsive Design"],
   },
