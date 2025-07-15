@@ -21,5 +21,17 @@ export const projectsData = [
       "My autoclicker script for Google Chrome automates the refreshing of a page block and the handling of tasks that appear in a table. It uses two independent intervals: one is responsible for updating the content, the other for checking and interacting with elements. The script is optimised for fast performance, includes a random colour generation function to visually display activity, and integrates with the NumpadMultiply key for easy control.",
     repoUrl: "https://github.com/ShevaWork/clicker_with-req.git",
     tags: ["JavaScript ", "ChromeExtension ", "WebScraping "],
+  },,
+  {
+    id: 3,
+    title: "Positivus",
+    title_en: "Positivus",
+    description:
+      "Positivus — це багатосторінковий вебсайт, створений для презентації сучасного агентства або компанії, що надає маркетингові чи консалтингові послуги. Проєкт реалізований з використанням Vite та Tailwind CSS, з фокусом на адаптивний дизайн, зручну навігацію та сучасну візуальну естетику. Він включає головну сторінку, секції з інформацією про компанію, послуги, відгуки клієнтів, ціни та контактну форму.",
+    description_en:
+      "Positivus is a multi-page website designed to present a modern agency or company that provides marketing or consulting services. The project was implemented using Vite and Tailwind CSS, with a focus on responsive design, easy navigation, and modern visual aesthetics. It includes a home page, sections with information about the company, services, customer reviews, prices, and a contact form.",
+    liveUrl: "https://positivus-kappa-tawny.vercel.app/",
+    repoUrl: "https://github.com/ShevaWork/positivus",
+    tags: ["HTML ", "Tailwind CSS ", "Vite", "Responsive Design"],
   },
 ];
